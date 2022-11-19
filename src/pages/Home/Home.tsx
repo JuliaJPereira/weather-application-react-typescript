@@ -9,11 +9,7 @@ function Home() {
         sx={{
           width: 300,
           height: 300,
-          backgroundColor: "#4caf50",
-          "&:hover": {
-            backgroundColor: "#2e7d32",
-            opacity: [0.9, 0.8, 0.7],
-          },
+          backgroundColor: "#4caf50"
         }}
       >
         <Typography variant="h4">{t("HELLO_WORLD")}</Typography>
