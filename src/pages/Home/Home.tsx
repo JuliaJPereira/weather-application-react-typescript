@@ -29,6 +29,15 @@ function Home() {
         <Button variant="contained" onClick={onClick}>
           {t("SEARCH_BY_CITY")}
         </Button>
+
+        
+        <Box>
+          <Typography>Nome da cidade</Typography>
+          <Box>
+            <img src={'sjkdhkjf'} alt={'ícone do clima'} />
+            <Typography>Temperaturaº</Typography>
+          </Box>
+        </Box>
       </Box>
     </Container>
   );

@@ -11,6 +11,7 @@ export const useGetWeather = () => {
       `https://api.openweathermap.org/data/2.5/weather?lat=${response1.data[0].lat}&lon=${response1.data[0].lon}&appid=e83ae355fb450341a30c6df3a60135d7&units=metric`
     );
     console.log(response2);
+    console.log('Temperatura: ' + response2.data.main.temp, response2.data.weather[0].main);
   };
 
   return { getWeather };
