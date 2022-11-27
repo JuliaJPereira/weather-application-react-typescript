@@ -3,8 +3,53 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useGetWeather } from "../../services/index";
 
+export interface Clima {
+  coord: {
+    lon: number;
+    lat: number;
+  };
+  weather: [
+    {
+      id: number;
+      main: string;
+      description: string;
+      icon: string;
+    }
+  ];
+  base: string;
+  main: {
+    temp: number;
+    feels_like: number;
+    temp_min: number;
+    temp_max: number;
+    pressure: number;
+    humidity: number;
+  };
+  visibility: number;
+  wind: {
+    speed: number;
+    deg: number;
+    gust: number;
+  };
+  clouds: {
+    all: number;
+  };
+  dt: number;
+  sys: {
+    type: number;
+    id: number;
+    country: string;
+    sunrise: number;
+    sunset: number;
+  };
+  timezone: number;
+  id: number;
+  name: string;
+  cod: number;
+}
+
 function Home() {
-  const [city, setCity] = useState('');
+  const [city, setCity] = useState("");
   const [weather, setWeather] = useState();
 
   const { t } = useTranslation();
@@ -36,16 +81,10 @@ function Home() {
           {t("SEARCH_BY_CITY")}
         </Button>
 
-        {weather &&
+        {weather && (
           <Box>
-          <Typography>{setWeather.name}</Typography>
-          <Box>
-            <img src={"sjkdhkjf"} alt={"ícone do clima"} />
-            <Typography>{weather.data.main.temp}</Typography>
           </Box>
-        </Box>
-        }
-        
+        )}
       </Box>
     </Container>
   );
